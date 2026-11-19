@@ -4,7 +4,7 @@
  */
 
 const I18n = {
-    currentLang: 'zh',
+    currentLang: 'en',
     supportedLangs: ['zh', 'en', 'ru'],
     translations: {
         zh: {},
@@ -155,12 +155,6 @@ const I18n = {
             const savedLang = localStorage.getItem('currentLanguage');
             if (savedLang && this.supportedLangs.includes(savedLang)) {
                 this.currentLang = savedLang;
-                return;
-            }
-            const browserLang = navigator.language.split('-')[0];
-            if (this.supportedLangs.includes(browserLang)) {
-                this.currentLang = browserLang;
-                localStorage.setItem('currentLanguage', this.currentLang);
                 return;
             }
             console.log(`使用默认语言: ${this.currentLang}`);
